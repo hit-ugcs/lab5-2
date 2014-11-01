@@ -1,0 +1,135 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    name<br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    student id<br />
+    <%= f.text_field :studentid %>
+  </div>
+  <div class="field">
+    nickname<br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  </br>
+  <div style="color:red">
+    Please value each item below with a grade from 0 to 100.
+  </div>
+  </br>
+
+  <div class="project">
+    <h3>Term Project(40%)</h3>
+    <div class="field">
+      iteration 1<br />
+      <%= f.text_field :project1 %>%
+    </div>
+    <div class="field">
+      iteration 2<br />
+      <%= f.text_field :project2 %>%
+    </div>
+    <div class="field">
+      iteration 3<br />
+      <%= f.text_field :project3 %>%
+    </div>
+  </div>
+
+  <div class="lab">
+    <h3>Labs(10%)</h3>
+    <div class="field">
+      lab 1<br />
+      <%= f.text_field :lab1 %>%
+    </div>
+    <div class="field">
+      lab 2<br />
+      <%= f.text_field :lab2 %>%
+    </div>
+    <div class="field">
+      lab 3<br />
+      <%= f.text_field :lab3 %>%
+    </div>
+    <div class="field">
+      lab 4<br />
+      <%= f.text_field :lab4 %>%
+    </div>
+    <div class="field">
+      lab 5<br />
+      <%= f.text_field :lab5 %>%
+    </div>
+    <div class="field">
+      lab 6<br />
+      <%= f.text_field :lab6 %>%
+    </div>
+    <div class="field">
+      lab 7<br />
+      <%= f.text_field :lab7 %>%
+    </div>
+  </div>
+
+  <div class="final">
+    <h3>Class Participations(10%)</h3>
+    <div class="field">
+      class 1<br />
+      <%= f.text_field :class1 %>%
+    </div>
+    <div class="field">
+      class 2<br />
+      <%= f.text_field :class2 %>%
+    </div>
+    <div class="field">
+      class 3<br />
+      <%= f.text_field :class3 %>%
+    </div>
+    <div class="field">
+      class 4<br />
+      <%= f.text_field :class4 %>%
+    </div>
+    <div class="field">
+      class 5<br />
+      <%= f.text_field :class5 %>%
+    </div>
+    <div class="field">
+      class 6<br />
+      <%= f.text_field :class6 %>%
+    </div>
+    <div class="field">
+      class 7<br />
+      <%= f.text_field :class7 %>%
+    </div>
+    <div class="field">
+      class 8<br />
+      <%= f.text_field :class8 %>%
+    </div>
+    <div class="field">
+      class 9<br />
+      <%= f.text_field :class9 %>%
+    </div>
+    <div class="field">
+      class 10<br />
+      <%= f.text_field :class10 %>%
+    </div>
+  </div>
+
+  <div class="class">
+    <div class="field">
+      <h3>Final Examination(40%)</h3>
+      <%= f.text_field :finalgrade %>%
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,57 @@
+<head>
+<script language="javascript">
+function printdiv(printpage)
+{
+var headstr = "<html><head><title></title></head><body>";
+var footstr = "</body>";
+var newstr = document.all.item(printpage).innerHTML;
+var oldstr = document.body.innerHTML;
+document.body.innerHTML = newstr;
+window.print();
+document.body.innerHTML = oldstr;
+return false;
+}
+</script>
+</head>
+
+<body>
+<div id='div_print'>
+
+<h1>Grading Worksheet</h1>
+<table>
+  <tr>
+    <th>Student ID</th>
+    <th>Student Name (Chinese)</th>
+    <th>Nick Name (English)</th>
+    <th>Project(40%)</th>
+    <th>Final(40%)</th>
+    <th>Lab(10%)</th>
+    <th>Class(10%)</th>
+    <th>Final</th>
+  </tr>
+<% @students.each do |student| %>
+
+  <tr>
+    <td><%= student.studentid %></td>
+    <td><%= student.name %></td>
+    <td><%= student.nickname %></td>
+    <td><%= 0.4*(student.project1*0.25+student.project1*0.25+student.project1*0.5) %>%</td>
+    <td><%= 0.4*student.finalgrade %>%</td>
+    <td><%= 0.1/7*(student.lab1+student.lab2+student.lab3+student.lab4+student.lab5+student.lab6+student.lab7) %>%</td>
+    <td><%= 0.01*(student.class1+student.class2+student.class3+student.class4+student.class5+student.class6+student.class7+student.class8+student.class9+student.class10) %>%</td>
+    <td><%= 0.4*(student.project1*0.25+student.project1*0.25+student.project1*0.5)+0.4*student.finalgrade+0.1/7*(student.lab1+student.lab2+student.lab3+student.lab4+student.lab5+student.lab6+student.lab7)+0.01*(student.class1+student.class2+student.class3+student.class4+student.class5+student.class6+student.class7+student.class8+student.class9+student.class10) %>%</td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<br />
+<table>
+  <tr>
+    <td id="butt"></td>
+    <td><%= link_to 'Back', list_path(1) %></td>
+    <td><input align="right" name="b_print" type="button" class="ipt" onClick="printdiv('div_print');" value=" Print "> </td>
+  </tr>
+</table>
+</body>

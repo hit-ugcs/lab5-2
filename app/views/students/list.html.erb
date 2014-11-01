@@ -1,0 +1,87 @@
+<h1>Grading Worksheet</h1>
+<table>
+  <tr>
+    <th>Student ID</th>
+    <th>Student Name (Chinese)</th>
+    <th>Nick Name (English)</th>
+    <th>Project(40%)</th>
+    <th>Final(40%)</th>
+    <th>Lab(10%)</th>
+    <th>Class(10%)</th>
+    <th>Final</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @students.each do |student| %>
+
+  <tr>
+    <td><%= student.studentid %></td>
+    <td><%= student.name %></td>
+    <td><%= student.nickname %></td>
+    <td><%= 0.4*(student.project1*0.25+student.project1*0.25+student.project1*0.5) %>%</td>
+    <td><%= 0.4*student.finalgrade %>%</td>
+    <td><%= 0.1/7*(student.lab1+student.lab2+student.lab3+student.lab4+student.lab5+student.lab6+student.lab7) %>%</td>
+    <td><%= 0.01*(student.class1+student.class2+student.class3+student.class4+student.class5+student.class6+student.class7+student.class8+student.class9+student.class10) %>%</td>
+    <td><%= 0.4*(student.project1*0.25+student.project1*0.25+student.project1*0.5)+0.4*student.finalgrade+0.1/7*(student.lab1+student.lab2+student.lab3+student.lab4+student.lab5+student.lab6+student.lab7)+0.01*(student.class1+student.class2+student.class3+student.class4+student.class5+student.class6+student.class7+student.class8+student.class9+student.class10) %>%</td>
+    
+    <td><%= link_to 'Edit', edit_student_path(student) %>
+    
+    <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td><br/><%= link_to 'New Student', new_student_path %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></br>
+        <% if @pnum<@len %>
+            <%= link_to 'Next', list_path(@pid+1) %>
+        <% end %></td>
+    <td></br>
+        <% if @pid>1 %>
+            <%= link_to 'Previous', list_path(@pid-1) %>
+        <% end %></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><input id="btnClose" type="button" value="Exit" onClick="custom_close()" /></td>
+    <td><%= link_to 'Print', students_path %></td>
+    <td></br></td>
+    <td></td>
+  </tr>
+</table>
+
+<script language="javascript">
+function custom_close(){
+if 
+(confirm("Are you sure to exit？")){
+window.opener=null;
+window.open('','_self');
+window.close();
+}
+else{}
+}
+</script>
+
+ <% if current_user %>
+       <%= link_to('log out', destroy_user_session_path, :method => :delete) %> |
+     <%= link_to('change password', edit_registration_path(:user)) %>
+   <% else %>
+      <%= link_to('sign in', new_registration_path(:user)) %> |
+        <%= link_to('log in', new_session_path(:user)) %>
+   <% end %>
+
+
+
+

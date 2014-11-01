@@ -1,0 +1,9 @@
+class AddInt < ActiveRecord::Migration
+  def change
+	add_column :students, :finalgrade, :int
+	add_column :students, :labgrade, :int
+	add_column :students, :classgrade, :int
+	add_column :students, :project, :int
+  end
+
+end

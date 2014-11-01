@@ -1,0 +1,7 @@
+class AddCol2 < ActiveRecord::Migration
+  def change
+	add_column :students, :final, :string
+	add_column :students, :lab, :string
+	add_column :students, :class, :string
+  end
+end

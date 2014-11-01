@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2>Name:</h2>
+  <%= @student.name %>
+</p>
+<p>
+  <h2>Student ID:</h2>
+  <%= @student.studentid %>
+</p>
+<p>
+  <h2>Nick Name:</h2>
+  <%= @student.nickname %>
+</p>
+<div class="project">
+  <h2>Term Project(40%):</h2>
+  <div><b>project 1</b><br>
+  <%= @student.project1 %>%
+  </div>
+  <div><b>project 2</b><br>
+  <%= @student.project2 %>%
+  </div>
+  <div><b>project 3</b><br>
+  <%= @student.project3 %>%
+  </div>
+</div>
+<div class="lab">
+  <h2>Labs(10%):</h2>
+  <div><b>lab 1</b><br>
+  <%= @student.lab1 %>%
+  </div>
+  <div><b>lab 2</b><br>
+  <%= @student.lab2 %>%
+  </div>
+  <div><b>lab 3</b><br>
+  <%= @student.lab3 %>%
+  </div>
+  <div><b>lab 4</b><br>
+  <%= @student.lab4 %>%
+  </div>
+  <div><b>lab 5</b><br>
+  <%= @student.lab5 %>%
+  </div>
+  <div><b>lab 6</b><br>
+  <%= @student.lab6 %>%
+  </div>
+  <div><b>lab 7</b><br>
+  <%= @student.lab7 %>%
+  </div>
+</div>
+<div class="project">
+  <h2>Class Participations(10%)</h2>
+  <div><b>class 1</b><br>
+  <%= @student.class1 %>%
+  </div>
+  <div><b>class 2</b><br>
+  <%= @student.class2 %>%
+  </div>
+  <div><b>class 3</b><br>
+  <%= @student.class3 %>%
+  </div>
+  <div><b>class 4</b><br>
+  <%= @student.class4 %>%
+  </div>
+  <div><b>class 5</b><br>
+  <%= @student.class5 %>%
+  </div>
+  <div><b>class 6</b><br>
+  <%= @student.class6 %>%
+  </div>
+  <div><b>class 7</b><br>
+  <%= @student.class7 %>%
+  </div>
+  <div><b>class 8</b><br>
+  <%= @student.class8 %>%
+  </div>
+  <div><b>class 9</b><br>
+  <%= @student.class9 %>%
+  </div>
+  <div><b>class 10</b><br>
+  <%= @student.class10 %>%
+  </div>
+</div>
+
+
+</p>
+  <h2>final:</h2>
+  <%= @student.finalgrade %>%
+</br>
+
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', list_path(1) %>
