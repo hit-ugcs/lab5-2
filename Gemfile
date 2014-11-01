@@ -4,6 +4,10 @@ gem 'rails', '3.2.16'
 
 gem 'devise'
 
+group :production do
+	gem 'rails_12factor'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
