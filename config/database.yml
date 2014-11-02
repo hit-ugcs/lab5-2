@@ -9,14 +9,7 @@
 #  pool: 5
 #  timeout: 5000
 
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_development
-  host: localhost
-  pool: 5
-  username: myapp
-  password: myapp
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,13 +20,6 @@ development:
 #  pool: 5
 #  timeout: 5000
 
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_test
-  pool: 5
-  username: myapp
-  password: 
 
 #production:
   #adapter: sqlite3
@@ -42,4 +28,6 @@ test:
   #timeout: 5000
 production:
   adapter: postgresql
-
+  encoding: unicode
+  database: myapp_production
+  pool: 5
